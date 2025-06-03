@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Environnements virtuels
+env/
+venv/
+ENV/
+.venv/
+
+# Django
+db.sqlite3
+*.sqlite3
+
+# Fichiers de configuration sensibles
+.env
+
+# Dossiers de logs
+*.log
+
+# VS Code
+.vscode/
+
+# Autres fichiers temporaires
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
