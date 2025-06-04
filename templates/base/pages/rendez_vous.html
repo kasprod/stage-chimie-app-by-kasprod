@@ -1,0 +1,159 @@
+<!-- filepath: c:\Users\Kasprod\Documents\Mes projets\python\stage-by-kasanji\projetGroupFour\templates\base\pages\rendez_vous.html -->
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+.rdv-facebook-style {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 1.5px 4px rgba(0,0,0,0.03);
+  padding: 2rem 2rem 1.5rem 2rem;
+  margin-bottom: 2rem;
+}
+.rdv-facebook-style h4 {
+  color: #1877f2;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.rdv-facebook-style ul, .rdv-facebook-style ol {
+  margin-bottom: 0.7rem;
+}
+.rdv-facebook-style li {
+  margin-bottom: 0.4rem;
+}
+.rdv-form-col {
+  background: #f0f2f5;
+  border-radius: 8px;
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.03);
+  padding: 2rem 2rem 1.5rem 2rem;
+}
+@media (max-width: 991px) {
+  .rdv-facebook-style, .rdv-form-col { padding: 1.2rem 0.7rem; }
+}
+</style>
+
+<section class="py-5" style="background: #f0f2f5; margin-top: 56px;">
+  <div class="container px-4 px-lg-5">
+    <div class="row g-4 justify-content-center">
+      <!-- Colonne infos -->
+      <div class="col-lg-6">
+        <div class="rdv-facebook-style mb-3">
+          <h1 class="fw-bold mb-3" style="font-size:2.1rem;">
+            <span style="font-size:2.2rem;"></span> Prise de Rendez-vous
+          </h1>
+          <p class="lead text-muted mb-3">
+            Bienvenue sur la plateforme officielle de prise de rendez-vous du Département de Chimie de l’Université de Kinshasa.<br>
+            Afin d’améliorer la communication et la gestion du temps entre les étudiants, les enseignants et l’administration, nous avons mis en place un système intégré vous permettant de réserver un créneau pour rencontrer :
+          </p>
+          <ul class="mb-3">
+            <li>🔹 Le Chef du Département</li>
+            <li>🔹 Le Secrétaire Académique</li>
+            <li>🔹 Le Responsable des Travaux Pratiques</li>
+            <li>🔹 Tout autre membre de l’administration ou du corps académique</li>
+          </ul>
+        </div>
+       
+        <div class="rdv-facebook-style">
+          <h4 class="mb-2">Besoin d’aide ?</h4>
+          <p class="mb-1">
+            En cas de difficulté ou pour toute question, vous pouvez nous contacter à l’adresse suivante :
+          </p>
+          <div>
+            <b>📧</b> <a href="mailto:contact.chimie@unikin.ac.cd">contact.chimie@unikin.ac.cd</a><br>
+            <b>📞</b> <a href="tel:+243812000000">+243 812 000 000</a>
+          </div>
+        </div>
+      </div>
+      <!-- Colonne formulaire -->
+      <div class="col-lg-6">
+        <div class="rdv-form-col">
+          <h4 class="fw-semibold mb-3 text-center" style="color:#1877f2;">Réserver un rendez-vous</h4>
+          <form method="post" action="{% url 'base:meeting' %}" id="rdvForm">   
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="nom_demandeur" class="form-label">Votre nom</label>
+              <input type="text" class="form-control" id="nom_demandeur" name="nom_demandeur" required>
+            </div>
+            <div class="mb-3">
+              <label for="email_demandeur" class="form-label">Votre email</label>
+              <input type="email" class="form-control" id="email_demandeur" name="email_demandeur" required>
+            </div>
+            <div class="mb-3">
+              <label for="domaine_demandeur" class="form-label">Vous êtes</label>
+              <select class="form-select" id="domaine_demandeur" name="domaine_demandeur" required>
+                <option value="">Choisir...</option>
+                <option>Étudiant</option>
+                <option>Corps académique</option>
+                <option>Administration</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="membre" class="form-label">Membre à rencontrer</label>
+              <select class="form-select" id="membre" name="membre" required>
+                <option value="">Choisir...</option>
+                <option>Chef du Département</option>
+                <option>Secrétaire Académique</option>
+                <option>Responsable des Travaux Pratiques</option>
+                <option value="autre">Autre membre</option>
+              </select>
+            </div>
+            <div id="autre-fields" style="display:none;">
+              <div class="mb-3">
+                <label for="nom_autre" class="form-label">Nom de la personne à rencontrer</label>
+                <input type="text" class="form-control" id="nom_autre" name="nom_autre">
+              </div>
+              <div class="mb-3">
+                <label for="poste_autre" class="form-label">Poste de la personne</label>
+                <input type="text" class="form-control" id="poste_autre" name="poste_autre">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="date" class="form-label">Date</label>
+              <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <div class="mb-3">
+              <label for="heure" class="form-label">Heure</label>
+              <input type="time" class="form-control" id="heure" name="heure" required>
+            </div>
+            <div class="mb-3">
+              <label for="motif" class="form-label">Motif du rendez-vous</label>
+              <input type="text" class="form-control" id="motif" name="motif" placeholder="Ex : orientation, réclamation..." required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Mode de rendez-vous</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="mode" id="enligne" value="En ligne" required>
+                  <label class="form-check-label" for="enligne">En ligne</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="mode" id="presentiel" value="Présentiel" required>
+                  <label class="form-check-label" for="presentiel">Présentiel</label>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Valider la réservation</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById('membre').addEventListener('change', function() {
+  var autreFields = document.getElementById('autre-fields');
+  if (this.value === 'autre') {
+    autreFields.style.display = 'block';
+    document.getElementById('nom_autre').required = true;
+    document.getElementById('poste_autre').required = true;
+  } else {
+    autreFields.style.display = 'none';
+    document.getElementById('nom_autre').required = false;
+    document.getElementById('poste_autre').required = false;
+  }
+});
+</script>
+{% endblock content %}

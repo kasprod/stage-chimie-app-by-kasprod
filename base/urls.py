@@ -1,8 +1,11 @@
 from django.urls import path
 from . import views
 
+app_name = 'base'
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.index, name='home'),
+    path('/actus', views.actus, name='actus'),
+    path('/academy_team', views.academy_team, name='academy_team'),
+    path('/meeting', views.meeting, name='meeting'),
 ]
-# This file defines the URL patterns for the base application of the Django project.
-# It includes a single URL pattern that maps the root URL to the `index` view in the `views` module.        
+       

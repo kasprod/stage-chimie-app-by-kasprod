@@ -1,12 +1,15 @@
+{% load static %}
 <nav
-  class="navbar navbar-expand-lg navbar-light fixed-top py-3"
+  class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink"
   id="mainNav"
 >
   <div class="container px-4 px-lg-5">
     <a
       class="navbar-brand"
-      href="#page-top"
-      >Start Bootstrap</a
+      href="{% url 'base:home' %}"
+      >
+      <img src="{% static 'assets/img/Unikin.svg.png' %}" alt="Logo" class="img-fluid" style="max-height: 40px;">
+      Groupe 4</a
     >
     <button
       class="navbar-toggler navbar-toggler-right"
@@ -26,32 +29,39 @@
       <ul class="navbar-nav ms-auto my-2 my-lg-0">
         <li class="nav-item">
           <a
-            class="nav-link"
-            href="#about"
-            >About</a
+            class="nav-link active"
+            href="{% url 'base:home' %}"
+            >Accueil</a
           >
         </li>
         <li class="nav-item">
           <a
             class="nav-link"
-            href="#services"
-            >Services</a
+            href="{% url 'base:actus' %}">Actus</a
           >
         </li>
         <li class="nav-item">
           <a
             class="nav-link"
-            href="#portfolio"
-            >Portfolio</a
+            href="{% url 'base:academy_team' %}"
+            >Equipe académique</a
           >
         </li>
         <li class="nav-item">
           <a
             class="nav-link"
-            href="#contact"
-            >Contact</a
+            href="{% url 'base:meeting' %}"
+            >Rendez-vous</a
           >
         </li>
+        {% if user.is_authenticated and user.is_superuser %}
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="{% url 'admin:index' %}"
+            >Admin</a>
+        </li>
+        {% endif %}
       </ul>
     </div>
   </div>
