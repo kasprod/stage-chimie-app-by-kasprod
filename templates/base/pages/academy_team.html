@@ -1,0 +1,158 @@
+<!-- filepath: c:\Users\Kasprod\Documents\Mes projets\python\stage-by-kasanji\projetGroupFour\templates\base\pages\academy_team.html -->
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+.carousel-item {
+  min-height: 370px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+/* Correction superposition Bootstrap */
+.carousel-inner > .carousel-item {
+  display: none;
+  transition: opacity 0.6s;
+}
+.carousel-inner > .carousel-item.active {
+  display: flex;
+}
+.carousel-blur-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(12px) brightness(0.7);
+  z-index: 1;
+  border-radius: 1rem;
+}
+.carousel-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 2.5rem 1rem 2rem 1rem;
+  border-radius: 1rem;
+  background: rgba(13,110,253,0.92); /* Bootstrap primary, forte opacité */
+  box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.15);
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carousel-content img.rounded-circle {
+  border: 4px solid #fff;
+  box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.15);
+  margin-bottom: 1.2rem;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+}
+.carousel-content h4 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.35rem;
+  letter-spacing: 0.5px;
+}
+.carousel-content p {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+.carousel-content p.role {
+  font-weight: 600;
+  font-size: 1.08rem;
+  margin-bottom: 0.7rem;
+}
+.carousel-content p:last-child {
+  margin-bottom: 0;
+  font-size: 0.97rem;
+}
+</style>
+
+<section class="py-5" style="background: #f8f9fa; margin-top: 56px;">
+  <div class="container px-4 px-lg-5">
+    <h1 class="fw-bold mb-5 text-center text-dark" style="font-size:2.5rem;">Équipe académique du Département de Chimie</h1>
+    <p class="text-center mb-4" style="font-size: 1.2rem; color: #6c757d;">
+      Découvrez les autorités académiques et les professeurs qui dirigent et enseignent au sein de notre département.
+      Leur expertise et leur engagement sont au cœur de notre mission éducative.
+    </p>
+    <h2 class="text-center mt-5 mb-4">Nos Autorités</h2>
+
+    <!-- Carrousel des autorités -->
+    <div id="carouselAutorites" class="carousel slide mb-5" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Chef de Département -->
+        <div class="carousel-item active">
+          <div class="carousel-blur-bg" style="background-image:url('{% static 'assets/img/mbala.jpg' %}');"></div>
+          <div class="carousel-content text-center">
+            <img src="{% static 'assets/img/mbala.jpg' %}" class="rounded-circle shadow" alt="Prof. Jean MUKENDI">
+            <h4>Prof. Jean MUKENDI</h4>
+            <p class="role">Chef de Département</p>
+            <p>Spécialiste en Chimie Organique et Chimie Verte</p>
+            <p><strong>Email :</strong> jean.mukendi@unikin.ac.cd</p>
+          </div>
+        </div>
+        <!-- Secrétaire académique -->
+        <div class="carousel-item">
+          <div class="carousel-blur-bg" style="background-image:url('{% static 'assets/img/mpaiana.jpg' %}');"></div>
+          <div class="carousel-content text-center">
+            <img src="{% static 'assets/img/mpaiana.jpg' %}" class="rounded-circle shadow" alt="Dr. Marie KABAMBA">
+            <h4>Dr. Marie KABAMBA</h4>
+            <p class="role">Secrétaire Académique</p>
+            <p>Chimie Analytique et Environnementale</p>
+            <p><strong>Email :</strong> marie.kabamba@unikin.ac.cd</p>
+          </div>
+        </div>
+        <!-- Responsable Recherche -->
+        <div class="carousel-item">
+          <div class="carousel-blur-bg" style="background-image:url('{% static 'assets/img/mukaya.jpg' %}');"></div>
+          <div class="carousel-content text-center">
+            <img src="{% static 'assets/img/mukaya.jpg' %}" class="rounded-circle shadow" alt="Prof. Albert KASONGO">
+            <h4>Prof. Albert KASONGO</h4>
+            <p class="role">Responsable Recherche</p>
+            <p>Chimie des Matériaux et Nanotechnologies</p>
+            <p><strong>Email :</strong> albert.kasongo@unikin.ac.cd</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutorites" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Précédent</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselAutorites" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Suivant</span>
+      </button>
+    </div>
+
+    <!-- Liste des professeurs -->
+    <h2 class="text-center mt-5 mb-4">Nos Professeurs</h2>
+    <div class="row g-4 justify-content-center">
+    
+<div class="row g-4 justify-content-center">
+    {% for prof in professeurs %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow h-100">
+          <div class="card-body text-center">
+            <img src="{{ prof.photo.url }}" class="rounded-circle mb-3" alt="{{ prof.nom }}" style="width: 120px; height: 120px; object-fit: cover;">
+            <h5 class="fw-bold mb-1">{{ prof.nom }}</h5>
+            <p class="text-primary mb-1">{{ prof.domaine }}</p>
+            <p class="text-muted small mb-2">
+              <strong>Publications principales :</strong><br>
+              {% for pub in prof.get_publications_list %}
+                - {{ pub }}<br>
+              {% endfor %}
+            </p>
+            <p class="mb-0"><strong>Email :</strong> {{ prof.email }}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

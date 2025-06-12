@@ -1,0 +1,232 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<header class="masthead">
+  <div class="container px-4 px-lg-5 h-100">
+    <div
+      class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center"
+    >
+      <div class="col-lg-8 align-self-end">
+        <h1 class="text-white font-weight-bold">
+          Bienvenue au Département de Chimie 
+        </h1>
+        <hr class="divider" />
+      </div>
+      <div class="col-lg-8 align-self-baseline">
+        <p class="text-white-75 mb-5">
+          Pôle d’excellence scientifique de la Faculté des Sciences de l’Université de Kinshasa.
+        </p>
+        <a
+  class="btn btn-primary btn-xl"
+  href="https://www.facebook.com/depchimieunikin" target="_blank"
+>
+  <img src="{% static 'assets/img/facebook-icon.png' %}" alt="Facebook" style="height: 24px; vertical-align: middle; margin-right: 8px;">
+  Suivez-nous sur Facebook
+</a>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- About-->
+<section class="page-section " id="about" style="background-color: #f8f9fa;">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="mt-0">Une histoire de savoir et de recherche</h2>
+        <hr class="divider divider-light" />
+        <p class="text-muted-75 mb-4">
+          Fondé peu après la création de l’Université de Kinshasa en 1954, le Département de Chimie est l’un des plus anciens piliers de la Faculté des Sciences. Depuis plus de six décennies, il a formé des générations de scientifiques, d’ingénieurs, de chercheurs et de professeurs qui ont marqué la vie scientifique et industrielle de la République Démocratique du Congo et au-delà.
+          <br /><br />
+          Le département s’est adapté aux enjeux contemporains : recherche environnementale, chimie verte, matériaux innovants et partenariats scientifiques. Fort de son passé prestigieux, il continue d’innover, d’enseigner et de rayonner.
+        </p>
+        <a class="btn btn-light btn-xl" href="#missions">Découvrir nos services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- missions-->
+<section
+  class="page-section"
+  id="missions"
+>
+<div class="container px-4 px-lg-5">
+  <h2 class="text-center mt-0">Nos missions</h2>
+  <hr class="divider" />
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    
+    <!-- Formation -->
+    <div class="col-lg-3 col-md-6 text-center">
+      <div class="mt-5">
+        <div class="mb-3">
+          <i class="bi bi-journal-bookmark-fill text-primary" style="font-size: 48px;"></i>
+        </div>
+        <h3 class="h5 mb-2">Formation de qualité</h3>
+        <p class="text-muted mb-0">
+          Assurer une formation de qualité en chimie fondamentale et appliquée (chimie minérale, organique, analytique, physique, environnementale, etc.)
+        </p>
+      </div>
+    </div>
+
+ 
+<!-- Recherche -->
+<div class="col-lg-3 col-md-6 text-center">
+  <div class="mt-5">
+    <div class="mb-3">
+      <i class="bi bi-bar-chart-line bi-search text-success" style="font-size: 48px;"></i>
+    </div>
+    <h3 class="h5 mb-2">Recherche de pointe</h3>
+    <p class="text-muted mb-0">
+      Développer des recherches de pointe répondant aux enjeux locaux et globaux (eau, environnement, santé, matériaux, énergie…)
+    </p>
+  </div>
+</div>
+
+
+
+    <!-- Collaboration -->
+    <div class="col-lg-3 col-md-6 text-center">
+      <div class="mt-5">
+        <div class="mb-3">
+          <i class="bi bi-people-fill text-warning" style="font-size: 48px;"></i>
+        </div>
+        <h3 class="h5 mb-2">Collaboration</h3>
+        <p class="text-muted mb-0">
+          Renforcer la collaboration avec les industries, institutions de recherche et universités partenaires.
+        </p>
+      </div>
+    </div>
+
+    <!-- Vulgarisation -->
+    <div class="col-lg-3 col-md-6 text-center">
+      <div class="mt-5">
+        <div class="mb-3">
+          <i class="bi bi-megaphone-fill text-danger" style="font-size: 48px;"></i>
+        </div>
+        <h3 class="h5 mb-2">Vulgarisation scientifique</h3>
+        <p class="text-muted mb-0">
+          Promouvoir la vulgarisation scientifique et l’engagement communautaire.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</section>
+<!-- formations-->
+<!-- 3. Nos formations -->
+<!-- 3. Nos formations -->
+<section id="formation">
+  <div class="container px-4 px-lg-5">
+    <h2 class="text-center mt-0">Nos formations</h2>
+    <hr class="divider" />
+    <div class="row gx-4 gx-lg-5 justify-content-center mb-4">
+      <!-- Licence en Chimie -->
+      <div class="col-lg-4 col-md-6 text-center mb-4">
+        <div class="card h-100 border-0 shadow">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#modalLicence">
+            <img class="card-img-top img-fluid" src="{% static 'assets/img/portfolio/thumbnails/1.jpg' %}" alt="Licence en Chimie" />
+          </a>
+          <div class="card-body">
+            <h3 class="h5 mb-2">Licence en Chimie</h3>
+            <p class="text-muted mb-0">Durée : 3 ans</p>
+          </div>
+        </div>
+      </div>
+      <!-- Master en Chimie -->
+      <div class="col-lg-4 col-md-6 text-center mb-4">
+        <div class="card h-100 border-0 shadow">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#modalMaster">
+            <img class="card-img-top img-fluid" src="{% static 'assets/img/portfolio/thumbnails/2.jpg' %}" alt="Master en Chimie" />
+          </a>
+          <div class="card-body">
+            <h3 class="h5 mb-2">Master en Chimie</h3>
+            <p class="text-muted mb-0">
+              Options : Chimie des matériaux, Chimie de l’environnement, Chimie organique.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Doctorat -->
+      <div class="col-lg-4 col-md-6 text-center mb-4">
+        <div class="card h-100 border-0 shadow">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#modalDoctorat">
+            <img class="card-img-top img-fluid" src="{% static 'assets/img/portfolio/thumbnails/3.jpg' %}" alt="Doctorat" />
+          </a>
+          <div class="card-body">
+            <h3 class="h5 mb-2">Doctorat</h3>
+            <p class="text-muted mb-0">
+              Encadrement de thèses dans divers axes de recherche.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modals formations Bootstrap stylés et responsives -->
+<!-- Modal Licence -->
+<div class="modal fade" id="modalLicence" tabindex="-1" aria-labelledby="modalLicenceLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-4 shadow-lg">
+      <div class="modal-header bg-primary text-white border-0 rounded-top-4">
+        <h5 class="modal-title fw-bold" id="modalLicenceLabel">Licence en Chimie</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+      <div class="modal-body d-flex flex-column align-items-center p-4">
+        <div class="w-100 mb-3 d-flex justify-content-center">
+          <img src="{% static 'assets/img/portfolio/fullsize/1.jpg' %}" class="img-fluid rounded-3 shadow-sm" alt="Licence en Chimie" style="max-width:320px; max-height:220px; object-fit:cover;">
+        </div>
+        <p class="lead text-secondary text-center mb-0" style="font-size:1.1rem;">
+          La <span class="fw-semibold text-primary">Licence en Chimie</span> (3 ans) offre une formation solide en chimie fondamentale et appliquée, couvrant la chimie minérale, organique, analytique, physique et environnementale.<br>
+          <span class="d-block mt-2">Elle prépare aux métiers de laboratoire, de l’enseignement ou à la poursuite d’études supérieures.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Master -->
+<div class="modal fade" id="modalMaster" tabindex="-1" aria-labelledby="modalMasterLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-4 shadow-lg">
+      <div class="modal-header bg-success text-white border-0 rounded-top-4">
+        <h5 class="modal-title fw-bold" id="modalMasterLabel">Master en Chimie</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+      <div class="modal-body d-flex flex-column align-items-center p-4">
+        <div class="w-100 mb-3 d-flex justify-content-center">
+          <img src="{% static 'assets/img/portfolio/fullsize/2.jpg' %}" class="img-fluid rounded-3 shadow-sm" alt="Master en Chimie" style="max-width:320px; max-height:220px; object-fit:cover;">
+        </div>
+        <p class="lead text-secondary text-center mb-0" style="font-size:1.1rem;">
+          Le <span class="fw-semibold text-success">Master en Chimie</span> propose des options en Chimie des matériaux, Chimie de l’environnement et Chimie organique.<br>
+          <span class="d-block mt-2">Il permet d’approfondir les connaissances et de se spécialiser dans des domaines innovants, en lien avec la recherche et l’industrie.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Doctorat -->
+<div class="modal fade" id="modalDoctorat" tabindex="-1" aria-labelledby="modalDoctoratLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-4 shadow-lg">
+      <div class="modal-header bg-warning border-0 rounded-top-4">
+        <h5 class="modal-title fw-bold" id="modalDoctoratLabel">Doctorat</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+      <div class="modal-body d-flex flex-column align-items-center p-4">
+        <div class="w-100 mb-3 d-flex justify-content-center">
+          <img src="{% static 'assets/img/portfolio/fullsize/3.jpg' %}" class="img-fluid rounded-3 shadow-sm" alt="Doctorat" style="max-width:320px; max-height:220px; object-fit:cover;">
+        </div>
+        <p class="lead text-secondary text-center mb-0" style="font-size:1.1rem;">
+          Le <span class="fw-semibold text-warning">Doctorat</span> permet l’encadrement de thèses dans divers axes de recherche en chimie.<br>
+          <span class="d-block mt-2">Il favorise l’innovation scientifique et la contribution à la résolution des enjeux locaux et globaux.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}
